@@ -41,6 +41,9 @@ module Expr =
         let deps = cols |> List.map Column.name |> Set.ofList
         Expr (RRaw(sql, Declared deps))
 
+    let rawWithDepNames (sql: string) (cols: string list) : Expr<'row, 'value> =
+        Expr (RRaw(sql, Declared (Set.ofList cols)))
+
     let rawOpaque (sql: string) : Expr<'row, 'value> =
         Expr (RRaw(sql, Opaque))
 

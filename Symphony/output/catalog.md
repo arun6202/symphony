@@ -1,9 +1,21 @@
-# OKF Bundle for customer_analytics_alias
-Source: SQLite.CustomersWithSales
+# OKF Bundle for northwind_order_lines_alias
+Source: SQLite.Northwind.OrderLine
 ## Fields
-- **customerId**: Keyword (Lineage: Exact set [CustomerID])
-- **customerName**: Text (Lineage: Exact set [CompanyName])
-- **country**: Keyword (Lineage: Exact set [Country])
-- **totalSales**: Double (Lineage: Exact set [TotalSales])
-- **totalOrders**: Long (Lineage: Exact set [TotalOrders])
-- **customerSegment**: Keyword (Lineage: Opaque)
+- **id**: Keyword (Lineage: Declared set [OrderID; ProductID])
+- **orderId**: Keyword (Lineage: Exact set [OrderID])
+- **orderDate**: Date (Lineage: Exact set [OrderDate])
+- **customer.customerId**: Keyword (Lineage: Exact set [CustomerID])
+- **customer.companyName**: Text (Lineage: Exact set [CompanyName])
+- **customer.contactName**: Text (Lineage: Exact set [ContactName])
+- **customer.country**: Keyword (Lineage: Exact set [Country])
+- **employee.employeeId**: Long (Lineage: Exact set [EmployeeID])
+- **employee.firstName**: Text (Lineage: Exact set [FirstName])
+- **employee.lastName**: Text (Lineage: Exact set [LastName])
+- **employee.title**: Text (Lineage: Exact set [Title])
+- **product.productId**: Long (Lineage: Exact set [ProductID])
+- **product.productName**: Text (Lineage: Exact set [ProductName])
+- **product.categoryName**: Keyword (Lineage: Exact set [CategoryName])
+- **unitPrice**: Double (Lineage: Exact set [UnitPrice])
+- **quantity**: Long (Lineage: Exact set [Quantity])
+- **discount**: Double (Lineage: Exact set [Discount])
+- **lineSales**: Double (Lineage: Declared set [Discount; Quantity; UnitPrice])

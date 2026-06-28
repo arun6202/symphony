@@ -1,23 +1,111 @@
 {
   "mappings": {
+    "dynamic": "strict",
     "properties": {
-      "customerId": {
+      "id": {
         "type": "keyword"
       },
-      "customerName": {
-        "type": "text"
-      },
-      "country": {
+      "orderId": {
         "type": "keyword"
       },
-      "totalSales": {
+      "orderDate": {
+        "type": "date"
+      },
+      "customer": {
+        "dynamic": "strict",
+        "properties": {
+          "customerId": {
+            "type": "keyword"
+          },
+          "companyName": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "contactName": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "country": {
+            "type": "keyword"
+          }
+        }
+      },
+      "employee": {
+        "dynamic": "strict",
+        "properties": {
+          "employeeId": {
+            "type": "long"
+          },
+          "firstName": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "lastName": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "title": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "product": {
+        "dynamic": "strict",
+        "properties": {
+          "productId": {
+            "type": "long"
+          },
+          "productName": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "categoryName": {
+            "type": "keyword"
+          }
+        }
+      },
+      "unitPrice": {
         "type": "double"
       },
-      "totalOrders": {
+      "quantity": {
         "type": "long"
       },
-      "customerSegment": {
-        "type": "keyword"
+      "discount": {
+        "type": "double"
+      },
+      "lineSales": {
+        "type": "double"
       }
     }
   }

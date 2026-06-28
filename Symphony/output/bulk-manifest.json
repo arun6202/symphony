@@ -1,0 +1,31 @@
+{
+  "alias": "northwind_order_lines_alias",
+  "documents": 609283,
+  "maxChunkBytes": 52428800,
+  "chunks": [
+    {
+      "path": "bulk\\order-lines-0001.ndjson",
+      "bytes": 52428488
+    },
+    {
+      "path": "bulk\\order-lines-0002.ndjson",
+      "bytes": 52428359
+    },
+    {
+      "path": "bulk\\order-lines-0003.ndjson",
+      "bytes": 52428553
+    },
+    {
+      "path": "bulk\\order-lines-0004.ndjson",
+      "bytes": 52428293
+    },
+    {
+      "path": "bulk\\order-lines-0005.ndjson",
+      "bytes": 52428442
+    },
+    {
+      "path": "bulk\\order-lines-0006.ndjson",
+      "bytes": 50501267
+    }
+  ]
+}
